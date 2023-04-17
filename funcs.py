@@ -75,12 +75,3 @@ def optimize5(sol):
         return sol
     else:
         return optimize5(transpose(sol))
-
-
-print(solve([
-    [1, 0, 1, 0, 1],
-    [1, 0, 1, 0, 1],
-    [1, 0, 1, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0]
-]))
