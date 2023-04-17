@@ -5,6 +5,8 @@ from math import sqrt
 
 pygame.init()
 screen = pygame.display.set_mode((800, 800))
+pygame.display.set_caption("Puzzle Panel")
+pygame.display.set_icon(pygame.image.load("Puzzle_Panel.png"))
 
 
 class Tile:
