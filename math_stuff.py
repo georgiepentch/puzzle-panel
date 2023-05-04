@@ -1,4 +1,4 @@
-import funcs
+import solve_funcs
 
 
 def trows(n):

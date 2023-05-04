@@ -1,7 +1,7 @@
 # import sys
 import pyautogui as py
 import time
-import funcs
+import solve_funcs
 from math import sqrt
 
 r = 5  # point similarity threshold

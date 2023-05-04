@@ -1,5 +1,5 @@
 import pygame
-from funcs import *
+from solve_funcs import *
 import numpy as np
 from math import sqrt
 
