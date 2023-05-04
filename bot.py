@@ -71,7 +71,7 @@ while True:
     # input the solution
     for i in indecies:
         p = all_tiles[i + int(len(all_tiles) / 2)]
-        py.click(x=p.x/2, y=p.y/2, clicks=2, interval=0.25)
+        py.click(x=p.x/2, y=p.y/2)
         time.sleep(1)  # buffer
     time.sleep(3)  # wait for next level
 
