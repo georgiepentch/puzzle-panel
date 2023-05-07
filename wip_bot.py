@@ -1,4 +1,3 @@
-# import sys
 import pyautogui as py
 import time
 import solve_funcs
@@ -45,9 +44,9 @@ def unflatten(lst):  # assumes len(lst) is a square number
     return [lst[(i*n):(i*n+n)] for i in range(n)]
 
 
-time.sleep(3)  # gives you time to change the active window
-
+'''
 while True:
+    time.sleep(5)  # wait for next level
     # Locate all the shroom and feather tiles
     shrooms = find("shroom")
     feathers = find("feather")
@@ -65,6 +64,7 @@ while True:
     bottom = shroom_locations[int(len(shroom_locations) / 2):]
 
     board = [(a + b) % 2 for a, b in zip(top, bottom)]
+
     solved = flatten(solve_funcs.solve(unflatten(board)))
     indecies = [i for i, j in enumerate(solved) if j == 1]
 
@@ -73,6 +73,6 @@ while True:
         p = all_tiles[i + int(len(all_tiles) / 2)]
         py.click(x=p.x/2, y=p.y/2)
         time.sleep(1)  # buffer
-    time.sleep(3)  # wait for next level
 
     # break
+'''
