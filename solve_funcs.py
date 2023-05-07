@@ -46,9 +46,9 @@ def solve(board):
     sol = [findt(row) for row in board]
     sol = transpose(sol)  # transpose sol
     sol = [findt(row) for row in sol]
-    sol = transpose(sol) # transpose sol again
+    sol = transpose(sol)  # transpose sol again
     if len(board) == 5:
-        sol = optimize5(sol, False)
+        sol = optimize5(sol)
     return sol
 
 
@@ -63,7 +63,7 @@ def count1s(row):
     return len([i for i in row if i == 1])
 
 
-def optimize5(sol, transposed):
+def optimize5(sol):
     changed = False
 
     for row in sol:
@@ -71,13 +71,16 @@ def optimize5(sol, transposed):
             null5(row)
             changed = True
 
+    sol = transpose(sol)
+
+    for row in sol:
+        if count1s(row[:2]) + count1s(row[3:]) >= 2:
+            null5(row)
+            changed = True
+
+    sol = transpose(sol)
+
     if not changed:
-        if transposed:
-            return transpose(sol)
-        else:
-            return sol
+        return sol
     else:
-        if transposed:
-            return optimize5(transpose(sol), False)
-        else:
-            return optimize5(transpose(sol), True)
+        return optimize5(sol)
