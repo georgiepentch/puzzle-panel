@@ -65,6 +65,7 @@ def count1s(row):
 
 def optimize5(sol):
     changed = False
+    n = sum([count1s(row) for row in sol])
 
     for row in sol:
         if count1s(row[:2]) + count1s(row[3:]) >= 2:
@@ -80,7 +81,9 @@ def optimize5(sol):
 
     sol = transpose(sol)
 
-    if not changed:
+    new_n = sum([count1s(row) for row in sol])
+
+    if not changed or new_n == n:  # new_n == n could be a source of bugs
         return sol
     else:
         return optimize5(sol)
